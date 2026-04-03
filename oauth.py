@@ -98,7 +98,7 @@ def page():
     'response_type': 'code', \
     'client_id': spotify_data[0], \
     'scope': 'user-read-currently-playing', \
-    'redirect_uri': 'http://'+host+':'+str(port)+'/spotify', \
+    'redirect_uri': 'http://'+redirect_url+':'+str(port)+'/spotify', \
     }
     url=urlencode(mydict)
     url="https://accounts.spotify.com/authorize?"+url
