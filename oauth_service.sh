@@ -1,5 +1,6 @@
 #!/usr/bin/bash
 installation_path="$2"
+redirect_url="$3"
 service_file="/etc/systemd/system/oauth.service"
 echo $installation_path
 if [[ ! -f "$service_file" ]]; then
@@ -13,7 +14,7 @@ Restart=always
 Environment=DISPLAY=:0
 RestartSec=3
 User=user
-ExecStart=bash -c \"cd $installation_path; python3 oauth.py\"
+ExecStart=bash -c \"cd $installation_path; python3 oauth.py --redirect_url $redirect_url\"
 ExecReload=echo Reloaded
 Type=simple
 [Install] 
