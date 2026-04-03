@@ -2,15 +2,22 @@
 This Projects Deals With OAuth For Major Services And Easier Token Validation
 
 ## Setup
-Run This Anywhere.
+
+### Run This Anywhere For A Single Use.
 ```
+git clone https://github.com/vi0lin/oauth.git
+cd oauth
 python3 oauth.py
 ```
-It Will Help You Generating Oauth Tokens, For Curl Interactions With Google, Youtube, Twitch Or Spotify.
 
+### Alternatively Install It As A Service
+```
+wget -qO- https://raw.githubusercontent.com/vi0lin/oauth.git/refs/heads/main/oauth_service.sh | bash -s -- debug `pwd`
+```
+It Will Help You Generating Oauth Tokens, For Curl Interactions With Google, Youtube, Twitch Or Spotify.
 I Am Doubting About Maintainance And Changing Server Authentication Standards. This Project Needs Maintainance.
 
-# Examples
+## Examples
 [auto_calender_importer](https://github.com/vi0lin/auto_calender_importer.git)
 
 <!--
