@@ -159,5 +159,12 @@ def spotify():
   savecode()
   return redirect('/')
 
-if __name__ == '__main__':
+run_http():
   app.run(host='0.0.0.0', port=port, debug=False)
+
+run_https():
+  context = ('ssl/signed_cert.pem', 'ssl/key.pem')
+  app.run(host='0.0.0.0', debug=False, port=port, ssl_context=context)
+
+if __name__ == '__main__':
+  run_https()

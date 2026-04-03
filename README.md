@@ -10,13 +10,14 @@ This Projects Deals With OAuth For Major Services And Easier Token Validation
 ```
 git clone https://github.com/vi0lin/oauth.git
 cd oauth
+chmod u+x ssl.sh
+./ssl.sh {your_ip}
 python3 oauth.py --redirect_url {your_ip}
 ```
 
 ### Alternatively Install It As A Service
 ```
 wget -qO- https://raw.githubusercontent.com/vi0lin/oauth.git/refs/heads/main/oauth_service.sh | bash -s -- debug `pwd` --redirect_url {your_ip}
-cat ./oauth_service.sh | bash -s -- debug `pwd` {your_ip}
 ```
 It Will Help You Generating Oauth Tokens, For Curl Interactions With Google, Youtube, Twitch Or Spotify.
 I Am Doubting About Maintainance And Changing Server Authentication Standards. This Project Needs Maintainance.
