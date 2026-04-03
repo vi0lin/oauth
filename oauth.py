@@ -8,7 +8,7 @@
 # [ ] 
 
 saveToFile=False
-saveToDb=True
+saveToDB=True
 
 import sqlite3
 db="test.sqlite3"
@@ -116,6 +116,8 @@ def page():
   return s
 
 def savecode():
+  con = sqlite3.connect(db)
+  cur = con.cursor()
   if re.fullmatch('/google.*', request.path):
     name='google'
   elif re.fullmatch('/spotify.*', request.path):
@@ -135,9 +137,9 @@ def savecode():
           f.write(rcvd_code)
           f.close()
         if saveToDB:
-          cur.execute("""cur.execute("INSERT INTO auth_code VALUES
-            "(datetime('now', 'localtime'), """+json+""")",
-           """)
+          # This Fails
+          # cur.execute("INSERT INTO auth_code VALUES (datetime('now', 'localtime'), "+json+")")
+          print(json)
         name+=rcvd_code
       if 'error' in k:
         error=request.args.get(k)
@@ -159,10 +161,10 @@ def spotify():
   savecode()
   return redirect('/')
 
-run_http():
+def run_http():
   app.run(host='0.0.0.0', port=port, debug=False)
 
-run_https():
+def run_https():
   context = ('ssl/signed_cert.pem', 'ssl/key.pem')
   app.run(host='0.0.0.0', debug=False, port=port, ssl_context=context)
 
