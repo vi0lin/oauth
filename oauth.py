@@ -22,7 +22,7 @@ from urllib.parse import urlencode, urlparse, parse_qsl
 
 app = Flask(__name__)
 title="Oauth"
-port=9000
+port=36529
 path="secrets/"
 redirect_url=""
 
@@ -79,7 +79,7 @@ def page():
     mydict = { \
     'client_id': client_id, \
     'response_type': 'code', \
-    'redirect_uri': "http://"+args.redirect_url+":"+str(port)+"/google", \
+    'redirect_uri': "https://"+args.redirect_url+":"+str(port)+"/google", \
     'scope': scope, \
     'access_type': 'offline', \
     }
@@ -98,7 +98,7 @@ def page():
     'response_type': 'code', \
     'client_id': spotify_data[0], \
     'scope': 'user-read-currently-playing', \
-    'redirect_uri': 'http://'+redirect_url+':'+str(port)+'/spotify', \
+    'redirect_uri': 'https://'+args.redirect_url+':'+str(port)+'/spotify', \
     }
     url=urlencode(mydict)
     url="https://accounts.spotify.com/authorize?"+url
