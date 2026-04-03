@@ -1,6 +1,8 @@
 #!/usr/bin/bash
 installation_path="$2"
 ip="$3"
+fallback_ip=$(ip a | awk '/inet / && $2 !~ /^127\./ && $2 ~ /^192\.168\./ && $2 !~ /^10\./ {print $2; exit}')
+ip=${ip:-$fallback_ip}
 service_file="/etc/systemd/system/oauth.service"
 echo $installation_path
 cd $installation_path
