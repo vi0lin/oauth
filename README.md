@@ -25,5 +25,5 @@ Google Does Not Take It Serious To Provide High Quality It Solutions.
 In My Oppinion They Mess Around. Like Most People In The Manhood.
 They Trouble Around With Authorization Protocols, That Are Unnessecary Complicated To Implement Meanwhile Accessing Your Mind And Checking Your Projects Before You Finish Them. Worst Case Counter Movement Would Be To Provoke You On The Presentation Layer Until You Lost Motivation.
 Simple Basic Auth Is Freezed For ICal Integration Since 24. March 2025
-Now I Need To Deal With Modern OAuth, That Nobody Needs! Just Another Trick To Lever People Out If They Do Not Conform To An Ideal Scheme And They Hardly Focus Their Programms To Be The Mainline.
+Now I Need To Deal With Modern OAuth, That Nobody Needs, Because In Several Years, New Technology Will Arrive! Just Another Trick To Lever People Out If They Do Not Conform To An Ideal Scheme And They Hardly Focus Their Programms To Be The Mainline.
 -->
