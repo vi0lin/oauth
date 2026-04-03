@@ -3,8 +3,7 @@ generate_ssl() {
   ip=$1
   path=ssl
   mkdir -p $path
-  prefix=python-https
-  p=$path/$prefix-
+  p=$path/
   abc='-subj "/C=DE/ST=unknown/L=unknown/O=unknown/OU=unknown/CN=unknown" -extensions v3_req'
   def="-addext \"subjectAltName = IP:$ip\""
   all="$abc $def"
@@ -29,3 +28,4 @@ generate_ssl() {
   # cp ${p}signed_cert.pem {path}
   echo done
 }
+generate_ssl
