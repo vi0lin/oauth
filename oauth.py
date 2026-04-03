@@ -79,7 +79,7 @@ def page():
     mydict = { \
     'client_id': client_id, \
     'response_type': 'code', \
-    'redirect_uri': "http://"+redirect_url+":"+str(port)+"/google", \
+    'redirect_uri': "http://"+args.redirect_url+":"+str(port)+"/google", \
     'scope': scope, \
     'access_type': 'offline', \
     }
