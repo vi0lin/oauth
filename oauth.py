@@ -5,6 +5,7 @@
 # [x] sqlite3
 # [ ] sqlite3 Remove Old Entries
 # [ ] sqlite3 add identifier
+# [ ] 
 
 saveToFile=False
 saveToDb=True
@@ -22,11 +23,19 @@ from urllib.parse import urlencode, urlparse, parse_qsl
 app = Flask(__name__)
 title="Oauth"
 port=9000
+path="secrets/"
+redirect_url=""
+
+import argparse
+parser = argparse.ArgumentParser(description="This Application Usualy Runs Headless")
+parser.add_argument("--redirect_url", type=str, dest="redirect_url", help="Set the redirect_url")
+args = parser.parse_args()
 
 from sys import platform
 if platform == "linux" or platform == "linux2":
   # linux
-  host="192.168.1.69"
+  if args.redirect_url is None:
+    args.redirect_url = "127.0.0.1"
   path="secrets/"
   linux=True
 elif platform == "darwin":
@@ -35,8 +44,8 @@ elif platform == "darwin":
   # OS X
 elif platform == "win32":
   # Windows
-  host="localhost"
-  path="C://Users/win/Documents/oauth/"
+  if args.redirect_url is None:
+    args.redirect_url = "localhost"
   windows=True
 
 def get_auth_code():
@@ -70,7 +79,7 @@ def page():
     mydict = { \
     'client_id': client_id, \
     'response_type': 'code', \
-    'redirect_uri': "http://"+host+":"+str(port)+"/google", \
+    'redirect_uri': "http://"+redirect_url+":"+str(port)+"/google", \
     'scope': scope, \
     'access_type': 'offline', \
     }
